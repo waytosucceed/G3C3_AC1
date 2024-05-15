@@ -1,0 +1,210 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <link rel="icon" type="image/x-icon" href="Logo.png">
+      
+        <style>
+
+            #storydiv { 
+                height: 100%;
+                position: relative;         
+              }
+                      
+            #storydiv p {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                border-left: 1px dotted black;
+            }
+            
+            .maindiv{
+                border:5px ridge rgb(12, 96, 206);
+                margin:1%;
+                border-radius:20px
+            }
+
+            p{
+                font-size:30px;
+              
+                font-weight: bold;
+            }
+
+           
+
+            #nextbtn, #backbtn, #newbtn{
+                width: 25%;
+                font-size:20px;
+                margin-right: 5%;
+                position: relative;
+                
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:95%;
+                height:95%;
+            }
+
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+
+            #story{ 
+                font-size: 22px;
+                border-radius: 20px;
+               
+            }
+
+            #imgdiv{
+                position:relative;
+            }
+         
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>
+        <br>
+        
+        <center>
+            <div>
+            <h2 id="about">Gender Nouns</h2>
+        </div>
+          
+         <div class="maindiv container-fluid" style="height:60%;">
+            <center>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 imgdiv">
+                <img id="family" src="2.jpg" style="width:100%;"> 
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11" id='storydiv'>
+                <p id="story" style="text-align:left; width:100%;">
+              
+                    Earlier we explored <span style="font-weight: bolder;font-style: italic;"> Nouns </span> which are known as naming words because they help us name things. <br>
+                   <br> Today we will look at <span style="font-style: italic;background-color: rgb(242, 242, 165);color: rgb(47, 176, 47);">a special kind of nouns </span> called <span style="color: blue;"> GENDER NOUNS </span> <span style="font-style: italic;background-color: rgb(242, 242, 165);color: rgb(47, 176, 47);">which are related to people,
+                    animals and birds. </span>  
+             
+
+                </p> 
+            </div>
+        </center>
+        </div>
+        <br>
+        <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+        <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+        <button id="newbtn" onclick="newpage()" class="btn btn-success">Next</button>
+       
+       
+
+
+        </center>   
+
+        <script>
+
+            var images = ["Assests/1.jpg", "Assests/2.jpg", "Assests/3.jpg", "Assests/4.jpg", "Assests/5.jpg", "Assests/6.jpg", "Assests/7.jpg", "Assests/8.jpg", "Assests/9.jpg", "Assests/10.jpg", "Assests/11.jpg", "Assests/12.jpg"];
+            var para=[" Marsha: I am Marsha, your friend, we are going to have fun with no end. <br><br> Don: Hello everyone! I am Don. Isn’t it a lovely morning? <br><br> Marsha: It sure is. Let us go for a morning walk. <br><br> Don: That will be wonderful. Look at all the flowers and the hens. <br><br>Marsha: Yes, they are beautiful. Do you know that  <span style='color: purple;'> ‘flowers’ </span> and hens are nouns? <br>",
+               
+                      "Don: Yes, I do know that.  <span style='color: blue;'> The hens are clucking around happily. There seem to be two kinds of hens. One is smaller and one is bigger.</span>  <br> <br> Marsha: So they are…  <span style='color: blueviolet;'>You see, the smaller ones are <u> hens </u> and the bigger ones are <u> roosters</u>.</span> <br> <br> Don: I thought they were all the same bird. <br><br> Marsha: They are the same bird. Hens are female birds. Roosters are male birds.  <span style='color: blue;'> Almost all  <span style='background-color: yellow;'> nouns </span>  related to people and animals have a male name  and a female name </span>",
+
+                      "Don: I did not know that. So, is  <span style='color: blue;'> ‘hen’ </span>  a female noun? <br> <br>Marsha: <span style='color: blue;'> Yes, but it has a different name. It is called feminine gender. A noun that denotes a female is called feminine gender. A noun that denotes a male is called a masculine gender.</span><br><br>  Don: Alright. <span style='color: blueviolet;'> Then the male noun of ‘hen’ is ‘rooster’. ‘Rooster’ is the masculine gender. ‘Hen’ is the feminine gender.</span> ",
+                      
+                      "Marsha:  Exactly Don. <span style='background-color:yellow;color: blue;'> Most of the nouns related to people and animals have masculine and feminine genders.</span> <br> <br> Don: Are you saying there are more nouns related to animals and people that have masculine and feminine genders?  <br> <br> Marsha: Yes, Don.  <br> <br> Don: I see! There are so many kinds of animals and almost all of them have both genders. <br> <br> ",
+
+
+                      "Marsha: Yes. Don, <span style='color: blue;'> it is also the same with people and roles related to people. Like Mother is the feminine gender and father is the masculine gender. King is the masculine gender and Queen is the feminine gender.</span>  <br><br> Don: I see. Marsha, you really made it easier for me to understand these Gender Nouns.  <br><br> Marsha: There is one more noun related to non-living things. That gender is called <span style='color: darkblue;font-weight:bolder;'> ‘neuter noun’</span>. ",
+
+
+                      "Don: Ok! There are three gender nouns- <span style='color: darkblue;'>  masculine</span>, <span style='color: purple;'> feminine</span> and <span style='color: green;'> neuter </span>. Can you give me an example of neuter gender? <br><br> Marsha: Now plants and non-living things are called neuter gender. You see that flower over there. <br><br> Don: Yes, it is so lovely.  ",
+
+
+                      "Marsha: It sure is. Flower is an example of neuter gender, as is -castle, table. <br><br> Don: I get it now. Things like the river and sky are neuter gender <br><br> Marsha: Absolutely right.",
+
+
+                      "Marsha: Do you see the cat sleeping on the grass?<br><br> Don: Yes, I do. Marsha: Do you know the gender nouns of the animal- cat? <br> <br> Don: Could you please help me with that ? <br> <br> Marsha: <span style='color: blue;'> The male cat is called ‘tom’ and the female cat is called ‘queen’. </span>",
+
+                      "Don: Thank you Marsha. <span style='color: blue;'> I see a bull over there.</span> <span style='color: blue;'> I think </span> <span style='color: blue;font-weight:bolder;'> ‘bull’ </span> <span style='color: blue;'> is a </span> <span style='color:orange;'> masculine gender</span>.<br> <br>  Marsha: You are right Don and  ‘cow’ is the feminine gender. <br> <br> Don: But Marsha, what about this beautiful <span style='color: blue;font-weight:bolder;'> peacock</span>? <br> <br> Marsha: <span style='color: blue;font-weight:bolder;'> ‘Peacock’ </span> is <span style='color:orange;'><u> masculine gender</u></span>. Its <span style='color:orange;'><u> feminine gender</u> </span> is <span style='color: blue;font-weight:bolder;'> ‘peahen’.</span>",
+
+                      "Don: You told me that masculine and feminine genders are for people too and not only for birds and animals.  <br> <br> Marsha: Yes, Don, you remember correctly.  <br> <br> Don: <span style='color: blue;'>  Yesterday in the restaurant, a man was serving us food and people were calling him <span style='color: blue;font-weight:bolder;'> ‘waiter’.</span> Do we have female waiters too, Marsha?</span> <br> <br> Marsha: <span style='color: blue;'> Yes, Don, a </span> <span style='color: orange;font-style:italic;'> female waiter</span>  <span style='color: blue;'> is called a </span> <span style='color: blue;font-weight:bolder;'> ‘waitress’</span>. ",
+
+                      
+                    ]
+
+            
+            
+            var i = -1;
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("nextbtn").style.display="none"
+                    document.getElementById("newbtn").style.display="inline-block"
+                    document.getElementById("family").src = "last.jpg";
+                    document.getElementById("story").style.fontSize="18px"
+                    document.getElementById("story").style.borderLeftStyle="solid"
+                    document.getElementById("story").style.borderLeftColor="rgb(164, 246, 229)"
+                    document.getElementById("about").innerHTML = "DICUSSION";
+                    document.getElementById("story").innerHTML = "Don: My friend told me in old times there were people called <span style='color: orange;font-weight:bolder;'> ‘counts’</span>. Do you know who they are and their gender? <br> <br> Marsha: In places where no kings or Dukes rule, the Countsrules the land. <span style='color: blue;font-weight:bolder;'> Count </span> is a <span style='color:orange;font-style:italic;'><u> masculine gender</u></span>. <span style='color: blue;font-weight:bolder;'> Countess </span> is its <span style='color:orange;font-style:italic;'><u> feminine gender.</u></span> <br> <br> Don: What about the gender of a Duke? <br> <br> Marsha: <span style='color: blue;font-weight:bolder;'> Duke </span> is a <span style='color:orange;font-style:italic;'><u> masculine gender </u></span> and <span style='color: blue;font-weight:bolder;'> Duchess </span> is the  <span style='color:orange;font-style:italic;'><u>feminine gender</u></span>. <br> <br> Don: Thank you Marsha. It was really fun knowing about Gender nouns. <br> ";
+                }
+                else{
+                    document.getElementById("story").style.fontSize="22px"
+                    document.getElementById("story").style.backgroundColor="white"
+                    document.getElementById("about").innerHTML="Don and Marsha’s Morning Walk "
+                     var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+            function newpage(){
+                window.location="ac2.html"
+            }
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+
+                if(i<0){
+                    document.getElementById("story").style.fontSize="18px"
+                   // document.getElementById("story").style.backgroundColor="lightblue"
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "2.jpg";
+                    document.getElementById("about").innerHTML="Gender Nouns"
+                    document.getElementById("story").innerHTML = 'Earlier we explored <span style="font-weight: bolder;font-style: italic;"> Nouns </span> which are known as naming words because they help us name things. Today we will look at <span style="font-style: italic;background-color: rgb(242, 242, 165);color: rgb(47, 176, 47);">a special kind of nouns </span> called <span style="color: blue;"> GENDER NOUNS </span> <span style="font-style: italic;background-color: rgb(242, 242, 165);color: rgb(47, 176, 47);">which are related to people,animals and birds. </span>  ';
+                }
+                else{
+                document.getElementById("story").style.fontSize="22px"
+                document.getElementById("story").style.backgroundColor="white"
+                document.getElementById("nextbtn").style.display="inline-block"
+                document.getElementById("about").innerHTML="Don and Marsha’s Morning Walk "
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
